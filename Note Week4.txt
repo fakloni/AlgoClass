@@ -1,0 +1,39 @@
+第四周
+    第九课：DFS和BFS
+        DFS使用非递归时用栈来进行维护
+        BFS用队列 queue （FIFO）
+    第十课：贪心算法
+        各种不同比较：
+            贪心：对当下做局部最优判断
+            回溯：能够回退
+            动态规划：最优判断+回退（根据以前运算结果来做最优判断）
+        贪心算法不一定可以得到最优解
+        何种情况下适合贪心算法？
+            问题能够分解成子问题来解决，子问题的最优解能够推到最终问题的最优解，这种子问题最优解成为最优子结构。
+        贪心算法与DP不同指出是贪心对每个子问题的解决方案都做出选择，不能回退。
+        难在如何证明可以用贪心法
+    第十一课：二分查找
+        二分查找前提：
+            目标函数单调性（递增或递减）
+            存在上下界
+            能够通过索引访问
+
+
+使用二分查找，寻找一个半有序数组 [4, 5, 6, 7, 0, 1, 2] 中间无序的地方
+二分时候需要考虑条件，总共有四种情况：
+1. 整个数组都是升序（pivot在index 0）
+2. pivot在mid之前，index 0之后
+3. pivot在mid之后
+4. pivot是mid
+所以可以用二分法不断逼近pivot element，以下的思路是当能保证mid之前是升序而且最左边的值要大于最右边的值，就可以确定pivot在mid的右侧，故
+更新left值，else就更新right值，注意right不能是mid - 1，不然的话当发生第四种情况，pivot是mid的时候，right = mid -1 就会把最小值排除。
+class Solution:
+    def findMin(self, nums: List[int]) -> int:
+        left, right = 0, len(nums) - 1
+        while left < right:
+            mid = (left + right) // 2
+            if nums[mid] >= nums[left] and nums[left] > nums[right]:
+                left = mid + 1
+            else:
+                right = mid
+        return nums[left]
