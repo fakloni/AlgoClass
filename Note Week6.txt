@@ -1,0 +1,19 @@
+第五周
+    第十二课：动态规划
+        动态规划：分治+最优子结构
+            DP与递归或者分治没有根本区别
+            共性：找到重复子问题
+            差异性：最优子结构、中途可以淘汰次优解
+        Top-down & Bottom-up approach
+            熟练：自底向上递推，也为DP经典的方法
+            比如机器人路径问题（经典DP问题，从终点开始递推回去做DP）
+        5 easy steps to DP:
+            Define subproblems 分治
+            Guess (part of solution)
+            Relate subproblem solutions （merge）
+            Recurse & memorize, or build DP table bottom-up
+            Solve original problem
+        DP:
+            找到重复性（分治）
+            定义状态数组（size等）
+            DP方程
