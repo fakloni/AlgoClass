@@ -1,0 +1,14 @@
+第七周
+    第十三课：高级搜索
+        初级搜索：
+            朴素搜索
+            优化方式：不重复（fibonacci），剪枝（生成括号问题）
+            搜索方向：DFS，BFS
+        高级搜索
+            双向搜索
+            启发式搜索（A*）
+            回溯法采用试错的思想
+        双向BFS的实现
+        A*基于BFS代码实现
+            相比queue用priorityqueue
+            启发式函数 heuristic function，是一种告知搜索方向的方法
